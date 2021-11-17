@@ -1,3 +1,13 @@
 #body-si{
     padding-right: 220px;
 }
+
+#side-bar-si{
+    position: fixed;
+    background-color: rgba(138, 43, 226, 1);
+    background: linear-gradient(300deg, rgba(138, 43, 226, 1) 0%, rgb(148,127,237) 45%, rgb(157,211,247) 100%);
+    width: 330px;
+    height: 100vh;
+    right: 0%;
+    border-left: 2px solid rgb(200, 200, 200);
+}
