@@ -1,7 +1,7 @@
 
 
 #body-lo{
-    padding-right: 330px;
+    padding-right: 280px;
 }
 
 #header-lo{
@@ -158,9 +158,53 @@
     position: fixed;
     background-color: rgba(138, 43, 226, 1);
     background: linear-gradient(300deg, rgba(138, 43, 226, 1) 0%, rgb(148,127,237) 45%, rgb(157,211,247) 100%);
-    width: 330px;
+    width: 280px;
     height: 100vh;
     right: 0%;
     border-left: 2px solid rgb(200, 200, 200);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-sidebar-lo{
+    height: 30%;
+    width: 100%;
+}
+.main-sidebar-lo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 30%;
+    width: 100%;
+}
+.main-sidebar-lo h2{
+    font-family: 'SBAggroL';
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+.bottom-sidebar-lo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 130px;
+    margin-bottom: 30px;
+}
+.sidebar-button-lo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 38px;
+    border: 1px solid var(--main-dark-purple);
+    border-radius: 5px;
+}
+.sidebar-button-lo span{
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: 'SBAggroL';
 }
 
