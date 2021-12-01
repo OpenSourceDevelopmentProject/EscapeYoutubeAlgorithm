@@ -1,0 +1,10 @@
+<!-- 실질적으로 사용자의 로그인 시도를 처리하는 페이지 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- 우리가 만들었던 클래스를 가져옴 -->
+<%@ page import="OpenSourceWebScrapper.src.Main" %>
+
+<%
+	Main youtube = new Main();
+	youtube.start();
+%>

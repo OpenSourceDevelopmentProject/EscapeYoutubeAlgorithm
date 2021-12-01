@@ -1,0 +1,25 @@
+package user;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class UserDAO {
+//데이터 베이스 접근 객체의 약자. 데이터베이스에서 정보를 불러오거나 넣고자 할 때 사용
+	
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	public UserDAO() {
+		try {
+			String dbURL = "jdbc:mysql://localhost:3306/BBS"; //컴퓨터에 설치된 mysql자체를 의미
+			String dbID = "root";
+			String dbPassword = "qlalfqjsgh312!"; //비밀번호
+			Class.forName("com.mysql.jdbc.Driver");//드라이버는 mysql에 접근할 수 있도록 ㅐ개체 역활을 함
+			conn = DriverManaver.getConnection(dbURL, dbID, dbPassword);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,217 @@
+
+
+#body-lo{
+    padding-right: 280px;
+}
+
+#header-lo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.title-lo{
+    font-family: 'SBAggroL';
+    font-size: 42px;
+    font-weight: 600;
+    color: #251327;
+    margin-bottom: 40px;
+}
+.info-lo{
+    font-family: 'SBAggroL';
+    font-weight: 600;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+#main-lo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.login-form-lo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid rgba(0,0,0,0.2);
+    border-radius: 15px;
+    padding: 40px 55px;
+    border: none;
+    box-shadow: 0px 0px 7px rgb(138, 43, 226, 0.3);
+    background-color: white;
+}
+
+.login-form-lo input::placeholder {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.id-lo{
+    border: 1.5px solid rgb(170, 170, 170);
+    border-radius: 7px 7px 0px 0px;
+    font-size: 18px;
+    padding-left: 15px;
+}
+.id-lo:focus{
+    border: 1.5px solid var(--main-purple);
+}
+.id-lo:focus::placeholder{
+    color: var(--main-purple);
+}
+.pw-lo{
+    border: 1.5px solid rgb(170, 170, 170);
+    border-top: none;
+    border-radius: 0px 0px 7px 7px;
+    font-size: 18px;
+    padding-left: 15px;
+}
+.pw-lo:focus{
+    border: 1.5px solid var(--main-purple);
+}
+.pw-lo:focus::placeholder{
+    color: var(--main-purple);
+}
+
+.sub-lo{
+    color: white;
+    font-size: 18px;
+    background-color: var(--main-purple);
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0px 0px 7px rgb(138, 43, 226, 0.3);
+}
+.input-lo{
+    width: 400px;
+    height: 50px;
+}
+
+/*경계*/
+.boundary-lo{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.boundary-lo span{
+    padding: 0px 30px;
+}
+.div-line-lo{
+    width: 250px;
+    height: 1px;
+    background-color: rgb(200, 200, 200);
+}
+
+#footer-lo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.sub-lo{
+    margin-top: 30px;
+}
+
+
+
+.google-lo{
+    height: 50px;
+    width: 400px;
+    border-radius: 15px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 7px rgb(138, 43, 226, 0.3);
+    
+    font-family: 'SBAggroL';
+    font-size: 18px;
+    font-weight: 600;
+}
+.google-logo-lo{
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.kakao-lo{
+    height: 50px;
+    width: 400px;
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: #F9E000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 7px rgb(138, 43, 226, 0.3);
+
+    font-family: 'SBAggroL';
+    font-size: 18px;
+    font-weight: 600;
+}
+.kakao-logo-lo{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+#side-bar-lo{
+    position: fixed;
+    background-color: rgba(138, 43, 226, 1);
+    background: linear-gradient(300deg, rgba(138, 43, 226, 1) 0%, rgb(148,127,237) 45%, rgb(157,211,247) 100%);
+    width: 280px;
+    height: 100vh;
+    right: 0%;
+    border-left: 2px solid rgb(200, 200, 200);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-sidebar-lo{
+    height: 30%;
+    width: 100%;
+}
+.main-sidebar-lo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 30%;
+    width: 100%;
+}
+.main-sidebar-lo h2{
+    font-family: 'SBAggroL';
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+.bottom-sidebar-lo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 130px;
+    margin-bottom: 30px;
+}
+.sidebar-button-lo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 38px;
+    border: 1px solid var(--main-dark-purple);
+    border-radius: 5px;
+}
+.sidebar-button-lo span{
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: 'SBAggroL';
+}
