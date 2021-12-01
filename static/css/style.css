@@ -8,6 +8,7 @@
 @import "screens/login.css";
 @import "screens/signup.css";
 @import "screens/index.css";
+@import "screens/index_logout.css";
 @import "screens/video.css";
 
 @font-face {
