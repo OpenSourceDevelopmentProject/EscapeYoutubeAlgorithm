@@ -47,6 +47,7 @@
                     </div>
                 </div>
             </a>
+            <a href="video.jsp?tagNum=1">
 	            <div class="two <%=dao.checkExistTag(2)%>">
 	                <div class="img-cover-in">
 	                    <img src=<%=dao.getProfileImgUrl(2)%> alt="">
@@ -57,7 +58,8 @@
 	                        </span>
 	                </div>
 	            </div>
-            <div class="three is-empty-in">
+	        </a>
+            <div class="three <%=dao.checkExistTag(3)%>">
                 <div class="img-cover-in">
                     <img src="#" alt="">
                 </div>
@@ -65,7 +67,7 @@
 
                 </div>
             </div>
-            <div class="four is-empty-in">
+            <div class="four <%=dao.checkExistTag(4)%>">
                 <div class="img-cover-in">
                     <img src="#" alt="">
                 </div>
@@ -73,7 +75,7 @@
 
                 </div>
             </div>
-            <div class="five is-empty-in">
+            <div class="five <%=dao.checkExistTag(5)%>">
                 <div class="img-cover-in">
                     <img src="#" alt="">
                 </div>
@@ -81,7 +83,7 @@
 
                 </div>
             </div>
-            <div class="six is-empty-in">
+            <div class="six <%=dao.checkExistTag(6)%>">
                 <div class="img-cover-in">
                     <img src="#" alt="">
                 </div>
@@ -89,7 +91,7 @@
 
                 </div>
             </div>
-            <div class="seven is-empty-in">
+            <div class="seven <%=dao.checkExistTag(7)%>">
                 <div class="img-cover-in">
                     <img src="#" alt="">
                 </div>
@@ -97,7 +99,7 @@
 
                 </div>
             </div>
-            <div class="eight is-empty-in">
+            <div class="eight <%=dao.checkExistTag(8)%>">
                 <div class="img-cover-in">
                     <img src="#" alt="">
                 </div>
@@ -105,7 +107,7 @@
 
                 </div>
             </div>
-            <div class="nine is-empty-in">
+            <div class="nine <%=dao.checkExistTag(9)%>">
                 <div class="img-cover-in">
                     <img src="#" alt="">
                 </div>
@@ -113,7 +115,7 @@
 
                 </div>
             </div>
-            <div class="ten is-empty-in">
+            <div class="ten <%=dao.checkExistTag(10)%>">
                 <div class="img-cover-in">
                     <img src="#" alt="">
                 </div>

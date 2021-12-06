@@ -21,9 +21,9 @@
     </header>
 
     <main id="main-lo">
-        <form action="" class="login-form-lo">
-            <input type="text" class="id-lo input-lo" placeholder="Id">
-            <input type="password" class="pw-lo input-lo" placeholder="Password">
+        <form method= "post" action="loginAction.jsp" class="login-form-lo">
+            <input type="text" class="id-lo input-lo" placeholder="Id" name = "userID" maxlength="20">
+            <input type="password" class="pw-lo input-lo" placeholder="Password" name = "userPassword" maxlength="20">
             <input type="submit" class="sub-lo input-lo" value="Log in">
         </form>
     </main>

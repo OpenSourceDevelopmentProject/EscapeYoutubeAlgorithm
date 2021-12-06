@@ -14,7 +14,6 @@ public class UserDAO {
 	
 	public UserDAO() {
 		try {
-			
 			String dbURL = "jdbc:mysql://localhost:3306/BBS?useSSL=false&autoReconnection=true&characterEncoding=utf8"; //컴퓨터에 설치된 mysql자체를 의미
 			String dbID = "root";
 			String dbPassword = "qlalfqjsgh312!"; //비밀번호
