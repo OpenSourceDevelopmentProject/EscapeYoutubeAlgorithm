@@ -132,17 +132,19 @@
         </div>
         <div class="main-sidebar-in">
             <a href="index.jsp">
-                <h2>Home</h2>
+                <div class="home-button">
+                    <h2>Home</h2>
+                </div>
             </a>
         </div>
         <div class="bottom-sidebar-in">
-        
-            <a href="login.jsp">
+            <h1 class="greeting-sidebar-in">Hi, 이주야</h1>
+            <a class="hidden" href="login.jsp">
                 <div class="sidebar-button-in">
                     <span>Log in</span>
                 </div>
             </a>
-            <a href="signup.jsp">
+            <a class="hidden" href="signup.jsp">
                 <div class="sidebar-button-in">
                     <span>Sign up</span>
                 </div>

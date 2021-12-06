@@ -55,7 +55,9 @@
         </div>
         <div class="main-sidebar-lo">
             <a href="index.jsp">
-                <h2>Home</h2>
+                <div class="home-button">
+                    <h2>Home</h2>
+                </div>
             </a>
         </div>
         <div class="bottom-sidebar-lo">

@@ -41,7 +41,9 @@
         </div>
         <div class="main-sidebar-inout">
             <a href="index.html">
-                <h2>Home</h2>
+                <div class="home-button">
+                    <h2>Home</h2>
+                </div>
             </a>
         </div>
         <div class="bottom-sidebar-inout">

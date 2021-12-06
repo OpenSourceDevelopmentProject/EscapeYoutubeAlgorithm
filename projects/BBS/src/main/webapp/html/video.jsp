@@ -62,11 +62,13 @@
         </div>
         <div class="main-sidebar-vi">
             <a href="index.jsp">
-                <h2>Home</h2>
+                <div class="home-button">
+                    <h2>Home</h2>
+                </div>
             </a>
         </div>
         <div class="bottom-sidebar-vi">
-        
+            <h1 class="greeting-sidebar-vi hidden">Hi, 이주야</h1>
             <a href="login.jsp">
                 <div class="sidebar-button-vi">
                     <span>Log in</span>
