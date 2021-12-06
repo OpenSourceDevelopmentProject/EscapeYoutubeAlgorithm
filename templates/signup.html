@@ -18,8 +18,17 @@
 
     <main id="main-si">
         <form action="" class="login-form-si">
-            <input type="text" class="id-si input-si" placeholder="Id">
-            <input type="password" class="pw-si input-si" placeholder="Password">
+            <input type="text" class="name-si input-si" placeholder="Please input your name" required>
+            <input type="text" class="id-si input-si" placeholder="Id" required>
+            <input type="password" class="pw-si input-si" placeholder="Password" required>
+            <div class="gender-si input-si">
+                <span>Gender</span>
+                <span>Male</span>
+                <input type="radio" name="gender" value="Male" required>
+                <span>Female</span>
+                <input type="radio" name="gender" value="Female" required>
+            </div>
+
             <input type="submit" class="sub-si input-si" value="Create Account">
         </form>
     </main>
