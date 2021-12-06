@@ -14,7 +14,7 @@
 </head>
 <body id="body-inout">
     <header id="header-inout">
-        <a class="header-logo-inout" href="index.html">
+        <a class="header-logo-inout" href="index.jsp">
             <img class="logo" src="../static/image/site_logo.png" alt="Escape logo">
             <h1 class="title-link-inout">Escape from Youtube-Algorithm</h1>
         </a>
@@ -40,7 +40,7 @@
     
         </div>
         <div class="main-sidebar-inout">
-            <a href="index.html">
+            <a href="index.jsp">
                 <div class="home-button">
                     <h2>Home</h2>
                 </div>
@@ -48,12 +48,12 @@
         </div>
         <div class="bottom-sidebar-inout">
         
-            <a href="login.html">
+            <a href="login.jsp">
                 <div class="sidebar-button-inout">
                     <span>Log in</span>
                 </div>
             </a>
-            <a href="signup.html">
+            <a href="signup.jsp">
                 <div class="sidebar-button-inout">
                     <span>Sign up</span>
                 </div>

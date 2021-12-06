@@ -20,9 +20,17 @@
     </header>
 
     <main id="main-si">
-        <form action="" class="login-form-si">
-            <input type="text" class="id-si input-si" placeholder="Id">
-            <input type="password" class="pw-si input-si" placeholder="Password">
+        <form method = "post" action="signupAction.jsp" class="login-form-si">
+            <input type="text" class="name-si input-si" placeholder="Please input your name" name = "userName" maxlength="20" required>
+            <input type="text" class="id-si input-si" placeholder="Id" name = "userID" maxlength="20" required>
+            <input type="password" class="pw-si input-si" placeholder="Password" name = "userPassword" maxlength="20" required>
+            <div class="gender-si input-si">
+                <span>Gender</span>
+                <span>Male</span>
+                <input type="radio" name="userGender" autocomplete="off" value="Male" required checked>
+                <span>Female</span>
+                <input type="radio" name="userGender" autocomplete="off" value="Female" required>
+            </div>
             <input type="submit" class="sub-si input-si" value="Create Account">
         </form>
     </main>
@@ -36,13 +44,13 @@
     <footer id="footer-si">
         <a href="/">
             <div class="google-si">
-                <img class="google-logo-lo" src="/static/image/googleLogo.png" alt="">
+                <img class="google-logo-lo" src="../static/image/googleLogo.png" alt="">
                 <span>Sign up for Google</span>
             </div>
         </a>
         <a href="/">
             <div class="kakao-si">
-                <img class="kakao-logo-lo" src="/static/image/kakaoLogo.png" alt="">
+                <img class="kakao-logo-lo" src="../static/image/kakaoLogo.png" alt="">
                 <span>Sign up for KakaoTalk</span>
             </div>
         </a>

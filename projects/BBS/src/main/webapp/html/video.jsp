@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="scrapper.YoutubeDAO" %> <!-- userdao의 클래스 가져옴 -->
+<%@ page import="youtube.YoutubeDAO" %> <!-- userdao의 클래스 가져옴 -->
 
        
 <!DOCTYPE html>

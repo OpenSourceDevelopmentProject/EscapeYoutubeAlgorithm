@@ -49,23 +49,37 @@
     color: rgba(0, 0, 0, 0.4);
 }
 
-.id-si{
+.name-si{
     border: 1.5px solid rgb(170, 170, 170);
     border-radius: 7px 7px 0px 0px;
     font-size: 18px;
     padding-left: 15px;
+}
+.name-si:focus{
+    border: 1.5px solid var(--main-purple);
+}
+.name-si:focus::placeholder{
+    color: var(--main-purple);
+    padding-bottom:1.5px;
+}
+
+.id-si{
+    border: 1.5px solid rgb(170, 170, 170);
+    font-size: 18px;
+    padding-left: 15px;
+    border-top: none;
 }
 .id-si:focus{
     border: 1.5px solid var(--main-purple);
 }
 .id-si:focus::placeholder{
     color: var(--main-purple);
+    padding-bottom:1.5px;
+
 }
 .pw-si{
     border: 1.5px solid rgb(170, 170, 170);
     border-top: none;
-    border-radius: 0px 0px 7px 7px;
-    font-size: 18px;
     padding-left: 15px;
 }
 .pw-si:focus{
@@ -73,8 +87,39 @@
 }
 .pw-si:focus::placeholder{
     color: var(--main-purple);
+    padding-bottom:1.5px;
+
+}
+.pw-si input{
+    font-size: 18px;
 }
 
+.gender-si{
+    border: 1.5px solid rgb(170, 170, 170);
+    border-top: none;
+    border-radius: 0px 0px 7px 7px;
+    font-size: 18px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    color: rgb(170, 170, 170);
+}
+.gender-si span:first-child{
+    margin-right: 80px;
+}
+.gender-si span{
+    color: inherit;
+    /*color: rgb(170, 170, 170);*/
+}
+.gender-si input{
+    margin-right: 30px;
+}
+
+.gender-si:focus-within{
+    border: 1.5px solid var(--main-purple);
+    color: var(--main-purple);
+    padding-bottom:1.5px;
+}
 .sub-si{
     color: white;
     font-size: 18px;

@@ -37,13 +37,13 @@
     <footer id="footer-lo">
         <a href="/">
             <div class="google-lo">
-                <img class="google-logo-lo" src="/static/image/googleLogo.png" alt="">
+                <img class="google-logo-lo" src="../static/image/googleLogo.png" alt="">
                 <span>Log in with Google</span>
             </div>
         </a>
         <a href="/">
             <div class="kakao-lo">
-                <img class="kakao-logo-lo" src="/static/image/kakaoLogo.png" alt="">
+                <img class="kakao-logo-lo" src="../static/image/kakaoLogo.png" alt="">
                 <span>Log in with KakaoTalk</span>
             </div>
         </a>

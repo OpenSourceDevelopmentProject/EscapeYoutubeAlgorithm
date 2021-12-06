@@ -2,12 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!-- 우리가 만들었던 클래스를 가져옴 -->
-<%@ page import="user.UserDAO" %>
+<%@ page import="youtube.UserDAO" %>
 <%@ page import="java.io.PrintWriter" %>
 <!-- 건너오는 데이터를 UTF-8로 바꿔줌 -->
 <% request.setCharacterEncoding("UTF-8"); %>
 <!--  User클래스를 자바beans로 사용, scope="page"는 현재 페이지 안에서만 사용한다고 알려줌 -->
-<jsp:useBean id="user" class="user.User" scope="page"/>
+<jsp:useBean id="user" class="youtube.User" scope="page"/>
 <!-- 로그인페이지에서 넘겨준 name="userID"를 받아서 사용자의 userID에 넣어줌-->
 <jsp:setProperty name="user" property="userID"/>
 <jsp:setProperty name="user" property="userPassword"/>
@@ -25,6 +25,7 @@
 		int result = userDAO.login(user.getUserID(), user.getUserPassword()); //login함수에 아이디와 패스워드를 넣어서 실행
 		//-2에서 1까지
 		if(result == 1){
+			user.setIsLogin(true);
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("location.href = 'index.jsp'");

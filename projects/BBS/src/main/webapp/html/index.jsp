@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="scrapper.YoutubeDAO" %> <!-- userdao의 클래스 가져옴 -->
+<%@ page import="youtube.YoutubeDAO" %> <!-- userdao의 클래스 가져옴 -->
+<%@ page import="youtube.User" %>
+<%@ page import="java.io.PrintWriter" %>
 
 <!DOCTYPE html>
 <html lang="kr">
@@ -14,6 +16,16 @@
     <title>Escape from Youtube Algorithm</title>
 </head>
 <body id="body-in">
+
+<% 
+User user = new User(); 
+if(user.getIsLogin() != true){
+	PrintWriter script = response.getWriter();
+	script.println("<script>");
+	script.println("location.href = './index_logout.jsp'");
+	script.println("</script>");
+}
+%>
 
     <header id="header-in">
         <a class="header-logo-in" href="index.jsp">
@@ -138,7 +150,7 @@
             </a>
         </div>
         <div class="bottom-sidebar-in">
-            <h1 class="greeting-sidebar-in">Hi, 이주야</h1>
+            <h1 class="greeting-sidebar-in">Hi, <%=dao.checkExistTag(2)%></h1>
             <a class="hidden" href="login.jsp">
                 <div class="sidebar-button-in">
                     <span>Log in</span>
