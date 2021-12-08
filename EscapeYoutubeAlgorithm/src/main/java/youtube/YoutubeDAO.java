@@ -1,0 +1,190 @@
+package youtube;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class YoutubeDAO {//database Access Object
+
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	public YoutubeDAO() {
+		try {
+			String dbURL = "jdbc:mysql://localhost:3306/BBS?useSSL=false&autoReconnection=true&characterEncoding=utf8"; //컴퓨터에 설치된 mysql자체를 의미
+			String dbID = "root";
+			String dbPassword = "qlalfqjsgh312!";
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+			System.out.println(setSubscribe_db("kkegoz", "롱수칸"));
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public int setYoutube_db(YoutubeCrawler youtube) {
+
+		String SQL = "INSERT INTO youtube_db VALUES (?,?,?)";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, youtube.chanelName);
+			pstmt.setString(2, youtube.profileImageUrl);
+			pstmt.setString(3, youtube.newVideoUrl);
+			return pstmt.executeUpdate(); //select문을 제외한 나머지를 수행할 때 사용
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1; // DB 오류
+
+	}
+	public int printYoutube_db(String chanelName) {
+		//Qeury 작성
+		String SQL = "SELECT profileImgUrl, newVideoUrl FROM youtube_db WHERE chanelName = ?"; //user테이블에서 userPassword를 가져옴
+		try {
+			
+			//Query 저장
+			pstmt = conn.prepareStatement(SQL); // pstmt에 위의 query 저장 후 DB에 연결 준비
+			pstmt.setString(1,  chanelName);
+			//Query 실행
+			rs = pstmt.executeQuery(); //select문을 수행할 때 작성
+			if(rs.next()) {
+				//데이터 타입에 따라 getInt(1) 등으로 사용
+				System.out.println("profileImgUrl : " + rs.getString(1));
+				System.out.println("newVideoUrl : " +rs.getString(2));
+				return 1;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("예외발생");
+		}
+		return-2;//데이터베이스 오류
+	}
+	public int setSubscribe_db(String userID, String chanelName) {
+
+		String SQL = "SELECT count(subscribeIndex) FROM subscribe_db;"; //user테이블에서 userPassword를 가져옴
+		int subscribeIndexNum = -1;
+		try {
+			pstmt = conn.prepareStatement(SQL); 
+			rs = pstmt.executeQuery(); 
+			if(rs.next()) {
+				subscribeIndexNum = rs.getInt(1);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("예외발생");
+		}
+		SQL = "INSERT INTO subscribe_db VALUES (?,?,?,?)";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, subscribeIndexNum+1);
+			pstmt.setString(2, userID);
+			pstmt.setString(3, chanelName);
+			pstmt.setString(4, "0");
+			System.out.println("성공");
+			return pstmt.executeUpdate(); //select문을 제외한 나머지를 수행할 때 사용
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("내부실패");
+		}
+		return -1; // DB 오류
+	}
+	
+	
+	public String getChanelName(int tagNum) {
+		//Qeury 작성
+		String SQL = "SELECT chanelName FROM youtube_db; "; //user테이블에서 userPassword를 가져옴
+		try {
+			
+			//Query 저장
+			pstmt = conn.prepareStatement(SQL); // pstmt에 위의 query 저장 후 DB에 연결 준비
+			//Query 실행
+			rs = pstmt.executeQuery(); //select문을 수행할 때 작성
+			for(int i=0; i<tagNum; i++) {
+				if(!rs.next())
+					return "-1";
+			}
+				//데이터 타입에 따라 getInt(1) 등으로 사용
+				//System.out.println("rs.getString(1) : " + rs.getString(1));
+				return rs.getString(1);
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("예외발생");
+		}
+		return "-2";//데이터베이스 오류
+	}
+	
+	public String getProfileImgUrl(int tagNum) {
+		//Qeury 작성
+		String SQL = "SELECT profileImgUrl FROM youtube_db; "; //user테이블에서 userPassword를 가져옴
+		try {
+			
+			//Query 저장
+			pstmt = conn.prepareStatement(SQL); // pstmt에 위의 query 저장 후 DB에 연결 준비
+			//Query 실행
+			rs = pstmt.executeQuery(); //select문을 수행할 때 작성
+			for(int i=0; i<tagNum; i++) {
+				if(!rs.next())
+					return "-1";
+			}
+				//데이터 타입에 따라 getInt(1) 등으로 사용
+//System.out.println("rs.getString(1) : " + rs.getString(1));
+//			System.out.println(rs.getString(1));
+				return "https://"+rs.getString(1);
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("예외발생");
+		}
+		return "-2";//데이터베이스 오류
+	}
+	
+	public String getNewVideoUrl(int tagNum) {
+		//Qeury 작성
+		String SQL = "SELECT newVideoUrl FROM youtube_db; "; //user테이블에서 userPassword를 가져옴
+		try {
+			
+			//Query 저장
+			pstmt = conn.prepareStatement(SQL); // pstmt에 위의 query 저장 후 DB에 연결 준비
+			//Query 실행
+			rs = pstmt.executeQuery(); //select문을 수행할 때 작성
+			for(int i=0; i<tagNum; i++) {
+				if(!rs.next())
+					return "-1";
+			}
+				//데이터 타입에 따라 getInt(1) 등으로 사용
+				//System.out.println("rs.getString(1) : " + rs.getString(1));
+				return "https://"+rs.getString(1);
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("예외발생");
+		}
+		return "-2";//데이터베이스 오류
+	}
+	
+	public int getChanelNum(String userID) {
+		String SQL = "SELECT count(subscribeIndex) FROM subscribe_db where userID = \""+userID+"\";";
+		try {
+		
+			pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("예외발생");
+		}
+		return -1;//데이터베이스 오류
+	}
+	
+	public String checkExistTag(int tagNum) {
+		User user = new User();
+		int chanelNum = getChanelNum(user.getUserID());
+		if(chanelNum >= tagNum)
+			return "is-exist-in";
+		else
+			return "is-empty-in";//데이터베이스 오류
+	}
+}
