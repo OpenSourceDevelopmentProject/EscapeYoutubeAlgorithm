@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="youtube.YoutubeDAO" %>
 <%@ page import="youtube.User" %>
+<%@ page import="java.io.PrintWriter" %>
 
        
 <!DOCTYPE html>
@@ -18,16 +19,42 @@
 <body id="body-vi">
     <main id="main-vi">
     <%  
-    String tagNum = request.getParameter("tagNum");
+    int tagNum = Integer.parseInt(request.getParameter("tagNum"));
+    int videoNum = Integer.parseInt(request.getParameter("videoNum"));
     YoutubeDAO dao = new YoutubeDAO(); //인스턴스생성
     User user = new User();
-    System.out.println(dao.getNewVideoUrl(Integer.parseInt(tagNum), user.getUserID()));
+    
+    PrintWriter script = response.getWriter();
+    if(videoNum<1)
+    {
+    	script.println("<script>");
+    	script.println("alert('가장 최근 영상입니다')");
+		script.println("</script>");
+		videoNum = 1;
+    }
+    if(videoNum>5)
+    {
+    	script.println("<script>");
+    	script.println("alert('마지막 영상입니다')");
+		script.println("</script>");
+		videoNum = 5;
+    }
+    String newVideoUrl = dao.getNewVideoUrl(tagNum, user.getUserID(), videoNum);
+    if(newVideoUrl.equals("-5"))
+    {
+    	script.println("<script>");
+    	script.println("alert('마지막 영상입니다')");
+		script.println("</script>");
+		videoNum -= 1 ;
+		newVideoUrl = dao.getNewVideoUrl(tagNum, user.getUserID(), videoNum);
+    }
+    
     %>
     
         <div class="video-information-vi">
             <div class="video-container-vi">
                 <div class="cover-vi"></div>
-                <iframe width="896" height="504" src=<%=dao.getNewVideoUrl(Integer.parseInt(tagNum), user.getUserID())%> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="896" height="504" src=<%=newVideoUrl%> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="bottom-bar-vi">
                 <div class="tag-container-vi">
@@ -37,13 +64,13 @@
                     </ul>
                 </div>
                 <div class="link-container-vi">
-                    <a href="#">
+                    <a href="video.jsp?tagNum=<%=tagNum%>&videoNum=<%=videoNum-1%>">
                         <div class="button-vi">
                             <i class="fas fa-chevron-left"></i>
                             <span>이전 영상</span>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="video.jsp?tagNum=<%=tagNum%>&videoNum=<%=videoNum+1%>">
                         <div class="button-vi">
                             <span>다음 영상</span>
                             <i class="fas fa-chevron-right"></i>

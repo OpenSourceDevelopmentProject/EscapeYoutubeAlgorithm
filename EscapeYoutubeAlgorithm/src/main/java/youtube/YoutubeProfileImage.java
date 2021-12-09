@@ -16,7 +16,7 @@ import org.jsoup.select.Elements;
 
 public class YoutubeProfileImage {
   
-    public final static String YOUTUBE_PROFILE_IMAGE_START_URL = "yt3.ggpht.com/ytc/";
+    public final static String YOUTUBE_PROFILE_IMAGE_START_URL = "yt3.ggpht.com/";
     public final static String YOUTUBE_PROFILE_IMAGE_END_URL = "-c-k-c0x00ffffff-no-rj";
  
     public static String getYoutubeChannelProfileImage(String channelUrl) throws IOException
@@ -26,11 +26,9 @@ public class YoutubeProfileImage {
         String html = document.toString();
         Pattern pattern = Pattern.compile(YOUTUBE_PROFILE_IMAGE_START_URL + "(.*?)" + YOUTUBE_PROFILE_IMAGE_END_URL);
         Matcher matcher = pattern.matcher(html); 
-        ArrayList imgUrl = new ArrayList(); 
-        
-        while (matcher.find()) { 
-             imgUrl.add(matcher.group());
-//           System.out.println("https://" + YOUTUBE_PROFILE_IMAGE_START_URL+imgUrl.get(imgUrl.size()-1)+YOUTUBE_PROFILE_IMAGE_END_URL); 
+        ArrayList imgUrl = new ArrayList();
+        for (int i=0; matcher.find(); i++) { 
+           imgUrl.add(matcher.group());
         }  
         return imgUrl.get(imgUrl.size()-1).toString();
        

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="youtube.UserDAO" %>
+<%@ page import="youtube.YoutubeDAO" %>
 <%@ page import="java.io.PrintWriter" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 
@@ -17,11 +18,13 @@
 <body>
 	<%
 		UserDAO userDAO = new UserDAO();
+		YoutubeDAO youtubeDAO = new YoutubeDAO();
 		int result = userDAO.login(user.getUserID(), user.getUserPassword()); //login함수에 아이디와 패스워드를 넣어서 실행
 		//-2에서 1까지
 		if(result == 1){
 			user.setIsLogin(true);
 			user.setUserName(userDAO.getUserNameFromDB(user.getUserID()));
+			youtubeDAO.updateNewVideoUrls(user.getUserID());
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("location.href = 'index_login.jsp'");

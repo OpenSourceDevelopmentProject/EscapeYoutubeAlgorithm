@@ -50,6 +50,7 @@
 			else {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
+				script.println("alert('회원가입 성공')");
 				script.println("location.href = 'index_login.jsp'");
 				script.println("</script>");
 			}

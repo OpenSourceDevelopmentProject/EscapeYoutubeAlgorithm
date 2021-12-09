@@ -18,8 +18,7 @@ public class YoutubeNewVideos {
   
     public final static String YOUTUBE_New_Video_Start_URL = "\"/watch";
     public final static String YOUTUBE_New_Video_End_URL = "\"";
-    
-    public static ArrayList getYoutubeNewVideos(String channelUrl) throws IOException
+    public static ArrayList getYoutubeNewVideos(String channelUrl, YoutubeCrawler youtubeCrawler) throws IOException
     {
         Document document = Jsoup.connect(channelUrl).get();
     
@@ -32,19 +31,22 @@ public class YoutubeNewVideos {
         
         while (matcher.find()) { 
         	newVideoUrlArray.add(matcher.group());
-//        	System.out.println("https://" + YOUTUBE_PROFILE_IMAGE_START_URL+imgUrl.get(imgUrl.size()-1)+YOUTUBE_PROFILE_IMAGE_END_URL); 
         } ;
         
         ArrayList returnArray = new ArrayList(); 
-        for(int i=0; i<3; i++) {
+        System.out.println(newVideoUrlArray.size());
+        
+        if(newVideoUrlArray.size()<5)
+        	youtubeCrawler.newVideosNum = newVideoUrlArray.size();
+        
+        for(int i=0; i<5 && i<newVideoUrlArray.size(); i++) {
         	String newVideoUrl = "youtube.com"+newVideoUrlArray.get(i).toString().replace("\"", "");
         	newVideoUrl = newVideoUrl.replace("watch?v=", "embed/");
-//        	System.out.println(newVideoUrl);
         	returnArray.add(newVideoUrl);
         }
         
         
-        
+        System.out.println(returnArray);
         return returnArray;
        
     }

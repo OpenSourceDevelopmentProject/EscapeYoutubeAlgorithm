@@ -46,7 +46,7 @@ if(user.getIsLogin() == false){
 		%>
         <i class="fas fa-chevron-left"></i>
         <div class="like-channel-in">
-            <a href="video.jsp?tagNum=1">
+            <a href="video.jsp?tagNum=1&videoNum=1">
                 <div class="one <%=youtubeDAO.checkExistTag(1)%>">
                     <div class="img-cover-in">
                         <img src="<%=youtubeDAO.getProfileImgUrl(1, user.getUserID())%>" alt="">
@@ -58,7 +58,7 @@ if(user.getIsLogin() == false){
                     </div>
                 </div>
             </a>
-            <a href="video.jsp?tagNum=2">
+            <a href="video.jsp?tagNum=2&videoNum=1">
 	            <div class="two <%=youtubeDAO.checkExistTag(2)%>">
 	                <div class="img-cover-in">
 	                    <img src=<%=youtubeDAO.getProfileImgUrl(2, user.getUserID())%> alt="">
@@ -71,7 +71,7 @@ if(user.getIsLogin() == false){
 	            </div>
 	        </a>
 	        
-            <a href="video.jsp?tagNum=3">
+            <a href="video.jsp?tagNum=3&videoNum=1">
 	            <div class="three <%=youtubeDAO.checkExistTag(3)%>">
 	                <div class="img-cover-in">
 	                    <img src=<%=youtubeDAO.getProfileImgUrl(3, user.getUserID())%> alt="">
@@ -83,7 +83,7 @@ if(user.getIsLogin() == false){
 	                </div>
 	            </div>
 	        </a>
-            <a href="video.jsp?tagNum=4">
+            <a href="video.jsp?tagNum=4&videoNum=1">
 	            <div class="four <%=youtubeDAO.checkExistTag(4)%>">
 	                <div class="img-cover-in">
 	                    <img src=<%=youtubeDAO.getProfileImgUrl(4, user.getUserID())%> alt="">
@@ -95,7 +95,7 @@ if(user.getIsLogin() == false){
 	                </div>
 	            </div>
 	        </a>
-           <a href="video.jsp?tagNum=5">
+           <a href="video.jsp?tagNum=5&videoNum=1">
 	            <div class="five <%=youtubeDAO.checkExistTag(5)%>">
 	                <div class="img-cover-in">
 	                    <img src=<%=youtubeDAO.getProfileImgUrl(5, user.getUserID())%> alt="">
@@ -107,7 +107,7 @@ if(user.getIsLogin() == false){
 	                </div>
 	            </div>
 	        </a>
-            <a href="video.jsp?tagNum=6">
+            <a href="video.jsp?tagNum=6&videoNum=1">
 	            <div class="six <%=youtubeDAO.checkExistTag(6)%>">
 	                <div class="img-cover-in">
 	                    <img src=<%=youtubeDAO.getProfileImgUrl(6, user.getUserID())%> alt="">
@@ -119,7 +119,7 @@ if(user.getIsLogin() == false){
 	                </div>
 	            </div>
 	        </a>
-           <a href="video.jsp?tagNum=7">
+           <a href="video.jsp?tagNum=7&videoNum=1">
 	            <div class="seven <%=youtubeDAO.checkExistTag(7)%>">
 	                <div class="img-cover-in">
 	                    <img src=<%=youtubeDAO.getProfileImgUrl(7, user.getUserID())%> alt="">
@@ -131,7 +131,7 @@ if(user.getIsLogin() == false){
 	                </div>
 	            </div>
 	        </a>
-           <a href="video.jsp?tagNum=8">
+           <a href="video.jsp?tagNum=8&videoNum=1">
 	            <div class="eight <%=youtubeDAO.checkExistTag(8)%>">
 	                <div class="img-cover-in">
 	                    <img src=<%=youtubeDAO.getProfileImgUrl(8, user.getUserID())%> alt="">
@@ -143,7 +143,7 @@ if(user.getIsLogin() == false){
 	                </div>
 	            </div>
 	        </a>
-            <a href="video.jsp?tagNum=9">
+            <a href="video.jsp?tagNum=9&videoNum=1">
 	            <div class="nine <%=youtubeDAO.checkExistTag(9)%>">
 	                <div class="img-cover-in">
 	                    <img src=<%=youtubeDAO.getProfileImgUrl(9, user.getUserID())%> alt="">
@@ -155,7 +155,7 @@ if(user.getIsLogin() == false){
 	                </div>
 	            </div>
 	        </a>
-            <a href="video.jsp?tagNum=10">
+            <a href="video.jsp?tagNum=10&videoNum=1">
 	            <div class="ten <%=youtubeDAO.checkExistTag(10)%>">
 	                <div class="img-cover-in">
 	                    <img src=<%=youtubeDAO.getProfileImgUrl(10, user.getUserID())%> alt="">
