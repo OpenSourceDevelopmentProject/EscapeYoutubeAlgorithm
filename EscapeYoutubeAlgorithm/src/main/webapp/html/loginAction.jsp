@@ -21,6 +21,7 @@
 		//-2에서 1까지
 		if(result == 1){
 			user.setIsLogin(true);
+			user.setUserName(userDAO.getUserNameFromDB(user.getUserID()));
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("location.href = 'index_login.jsp'");

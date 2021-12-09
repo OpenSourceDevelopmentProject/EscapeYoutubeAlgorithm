@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="youtube.YoutubeDAO" %>
+<%@ page import="youtube.User" %>
 
        
 <!DOCTYPE html>
@@ -16,14 +17,17 @@
 </head>
 <body id="body-vi">
     <main id="main-vi">
-    <%  String tagNum = request.getParameter("tagNum");%>
-    <% YoutubeDAO dao = new YoutubeDAO(); //인스턴스생성
+    <%  
+    String tagNum = request.getParameter("tagNum");
+    YoutubeDAO dao = new YoutubeDAO(); //인스턴스생성
+    User user = new User();
+    System.out.println(dao.getNewVideoUrl(Integer.parseInt(tagNum), user.getUserID()));
     %>
     
         <div class="video-information-vi">
             <div class="video-container-vi">
                 <div class="cover-vi"></div>
-                <iframe width="896" height="504" src=<%=dao.getNewVideoUrl(Integer.parseInt(tagNum))%> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="896" height="504" src=<%=dao.getNewVideoUrl(Integer.parseInt(tagNum), user.getUserID())%> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="bottom-bar-vi">
                 <div class="tag-container-vi">
@@ -67,14 +71,26 @@
                 </div>
             </a>
         </div>
+        <%
+        String greeting = null;
+        String loginAndsignUp = null;
+        if(user.getIsLogin()){ 
+        	greeting = "";
+        	loginAndsignUp = "hidden";
+        }
+        else{
+        	greeting = "hidden";
+        	loginAndsignUp = "";
+        }
+        %>
         <div class="bottom-sidebar-vi">
-            <h1 class="greeting-sidebar-vi hidden">Hi, 이주야</h1>
-            <a href="login.jsp">
+            <h1 class="greeting-sidebar-vi <%=greeting%>">Hi, <%=user.getUserName()%></h1>
+            <a href="login.jsp" class = "<%=loginAndsignUp%>">
                 <div class="sidebar-button-vi">
                     <span>Log in</span>
                 </div>
             </a>
-            <a href="signup.jsp">
+            <a href="signup.jsp" class = "<%=loginAndsignUp%>">
                 <div class="sidebar-button-vi">
                     <span>Sign up</span>
                 </div>

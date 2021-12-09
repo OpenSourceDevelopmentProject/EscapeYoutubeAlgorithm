@@ -16,16 +16,24 @@
 </head>
 <body id="body-in">
 
-
+<%
+User user = new User(); 
+PrintWriter script = response.getWriter();
+if(user.getIsLogin() == false){
+	script.println("<script>");
+	script.println("location.href = './index_logout.jsp'");
+	script.println("</script>");
+}
+%>
 
     <header id="header-in">
         <a class="header-logo-in" href="index_login.jsp">
             <img class="logo" src="../static/image/site_logo.png" alt="Escape logo">
             <h1 class="title-link-in">Escape from Youtube-Algorithm</h1>
         </a>
-        <form class="search-form-in js-form-in" action="get">
+        <form form method= "post" action="searchAction.jsp" class="search-form-in js-form-in">
             <div class="search-box-in">
-                <input type="text" class="search-input-in">
+                <input type="text" name = "searchUrl" class="search-input-in">
             </div>
             <button type="submit" class="search-submit-in">
                 <i class="fas fa-search fa-2x"></i>
@@ -41,91 +49,124 @@
             <a href="video.jsp?tagNum=1">
                 <div class="one <%=youtubeDAO.checkExistTag(1)%>">
                     <div class="img-cover-in">
-                        <img src="<%=youtubeDAO.getProfileImgUrl(1)%>" alt="">
+                        <img src="<%=youtubeDAO.getProfileImgUrl(1, user.getUserID())%>" alt="">
                     </div>
                     <div class="span-cover-in">
                         <span>    
-						<%= youtubeDAO.getChanelName(1) %>
+						<%= youtubeDAO.getChanelName(1, user.getUserID()) %>
                         </span>
                     </div>
                 </div>
             </a>
-            <a href="video.jsp?tagNum=1">
+            <a href="video.jsp?tagNum=2">
 	            <div class="two <%=youtubeDAO.checkExistTag(2)%>">
 	                <div class="img-cover-in">
-	                    <img src=<%=youtubeDAO.getProfileImgUrl(2)%> alt="">
+	                    <img src=<%=youtubeDAO.getProfileImgUrl(2, user.getUserID())%> alt="">
 	                </div>
 	                <div class="span-cover-in">
 							<span>    
-							<%= youtubeDAO.getChanelName(2) %>
+							<%= youtubeDAO.getChanelName(2, user.getUserID()) %>
 	                        </span>
 	                </div>
 	            </div>
 	        </a>
-            <div class="three <%=youtubeDAO.checkExistTag(3)%>">
-                <div class="img-cover-in">
-                    <img src="#" alt="">
-                </div>
-                <div class="span-cover-in">
-
-                </div>
-            </div>
-            <div class="four <%=youtubeDAO.checkExistTag(4)%>">
-                <div class="img-cover-in">
-                    <img src="#" alt="">
-                </div>
-                <div class="span-cover-in">
-
-                </div>
-            </div>
-            <div class="five <%=youtubeDAO.checkExistTag(5)%>">
-                <div class="img-cover-in">
-                    <img src="#" alt="">
-                </div>
-                <div class="span-cover-in">
-
-                </div>
-            </div>
-            <div class="six <%=youtubeDAO.checkExistTag(6)%>">
-                <div class="img-cover-in">
-                    <img src="#" alt="">
-                </div>
-                <div class="span-cover-in">
-
-                </div>
-            </div>
-            <div class="seven <%=youtubeDAO.checkExistTag(7)%>">
-                <div class="img-cover-in">
-                    <img src="#" alt="">
-                </div>
-                <div class="span-cover-in">
-
-                </div>
-            </div>
-            <div class="eight <%=youtubeDAO.checkExistTag(8)%>">
-                <div class="img-cover-in">
-                    <img src="#" alt="">
-                </div>
-                <div class="span-cover-in">
-
-                </div>
-            </div>
-            <div class="nine <%=youtubeDAO.checkExistTag(9)%>">
-                <div class="img-cover-in">
-                    <img src="#" alt="">
-                </div>
-                <div class="span-cover-in">
-
-                </div>
-            </div>
-            <div class="ten <%=youtubeDAO.checkExistTag(10)%>">
-                <div class="img-cover-in">
-                    <img src="#" alt="">
-                </div>
-                <div class="span-cover-in">
-
-                </div>
-            </div>
+	        
+            <a href="video.jsp?tagNum=3">
+	            <div class="three <%=youtubeDAO.checkExistTag(3)%>">
+	                <div class="img-cover-in">
+	                    <img src=<%=youtubeDAO.getProfileImgUrl(3, user.getUserID())%> alt="">
+	                </div>
+	                <div class="span-cover-in">
+							<span>    
+							<%= youtubeDAO.getChanelName(3, user.getUserID()) %>
+	                        </span>
+	                </div>
+	            </div>
+	        </a>
+            <a href="video.jsp?tagNum=4">
+	            <div class="four <%=youtubeDAO.checkExistTag(4)%>">
+	                <div class="img-cover-in">
+	                    <img src=<%=youtubeDAO.getProfileImgUrl(4, user.getUserID())%> alt="">
+	                </div>
+	                <div class="span-cover-in">
+							<span>    
+							<%= youtubeDAO.getChanelName(4, user.getUserID()) %>
+	                        </span>
+	                </div>
+	            </div>
+	        </a>
+           <a href="video.jsp?tagNum=5">
+	            <div class="five <%=youtubeDAO.checkExistTag(5)%>">
+	                <div class="img-cover-in">
+	                    <img src=<%=youtubeDAO.getProfileImgUrl(5, user.getUserID())%> alt="">
+	                </div>
+	                <div class="span-cover-in">
+							<span>    
+							<%= youtubeDAO.getChanelName(5, user.getUserID()) %>
+	                        </span>
+	                </div>
+	            </div>
+	        </a>
+            <a href="video.jsp?tagNum=6">
+	            <div class="six <%=youtubeDAO.checkExistTag(6)%>">
+	                <div class="img-cover-in">
+	                    <img src=<%=youtubeDAO.getProfileImgUrl(6, user.getUserID())%> alt="">
+	                </div>
+	                <div class="span-cover-in">
+							<span>    
+							<%= youtubeDAO.getChanelName(6, user.getUserID()) %>
+	                        </span>
+	                </div>
+	            </div>
+	        </a>
+           <a href="video.jsp?tagNum=7">
+	            <div class="seven <%=youtubeDAO.checkExistTag(7)%>">
+	                <div class="img-cover-in">
+	                    <img src=<%=youtubeDAO.getProfileImgUrl(7, user.getUserID())%> alt="">
+	                </div>
+	                <div class="span-cover-in">
+							<span>    
+							<%= youtubeDAO.getChanelName(7, user.getUserID()) %>
+	                        </span>
+	                </div>
+	            </div>
+	        </a>
+           <a href="video.jsp?tagNum=8">
+	            <div class="eight <%=youtubeDAO.checkExistTag(8)%>">
+	                <div class="img-cover-in">
+	                    <img src=<%=youtubeDAO.getProfileImgUrl(8, user.getUserID())%> alt="">
+	                </div>
+	                <div class="span-cover-in">
+							<span>    
+							<%= youtubeDAO.getChanelName(8, user.getUserID()) %>
+	                        </span>
+	                </div>
+	            </div>
+	        </a>
+            <a href="video.jsp?tagNum=9">
+	            <div class="nine <%=youtubeDAO.checkExistTag(9)%>">
+	                <div class="img-cover-in">
+	                    <img src=<%=youtubeDAO.getProfileImgUrl(9, user.getUserID())%> alt="">
+	                </div>
+	                <div class="span-cover-in">
+							<span>    
+							<%= youtubeDAO.getChanelName(9, user.getUserID()) %>
+	                        </span>
+	                </div>
+	            </div>
+	        </a>
+            <a href="video.jsp?tagNum=10">
+	            <div class="ten <%=youtubeDAO.checkExistTag(10)%>">
+	                <div class="img-cover-in">
+	                    <img src=<%=youtubeDAO.getProfileImgUrl(10, user.getUserID())%> alt="">
+	                </div>
+	                <div class="span-cover-in">
+							<span>    
+							<%= youtubeDAO.getChanelName(10, user.getUserID()) %>
+	                        </span>
+	                </div>
+	            </div>
+	        </a>
         </div>
         <i class="fas fa-chevron-right"></i>
     </main>
@@ -141,7 +182,7 @@
             </a>
         </div>
         <div class="bottom-sidebar-in">
-            <h1 class="greeting-sidebar-in">Hi, <%=youtubeDAO.checkExistTag(2)%></h1>
+            <h1 class="greeting-sidebar-in">Hi, <%=user.getUserName()%></h1>
             <a class="hidden" href="login.jsp">
                 <div class="sidebar-button-in">
                     <span>Log in</span>

@@ -26,10 +26,10 @@ public class YoutubeCrawler {
 	public String profileImageUrl = null;
 	public String newVideoUrl = null;
 	
-	public YoutubeCrawler() {
+	public YoutubeCrawler(String url) {
 		// Jsoup를 이용해서 http://www.cgv.co.kr/movies/ 크롤링
-		String url = "https://www.youtube.com/user/strongheartsbs";//크롤링할 url지정
-		System.out.println(url);
+		//String url = "https://www.youtube.com/user/strongheartsbs";//크롤링할 url지정
+		System.out.println("Crawler, url : "+url);
 		
 
 		//이름 추출
@@ -61,9 +61,9 @@ public class YoutubeCrawler {
 		
 		
 		 System.out.println("============================================================");
-//		 System.out.println(chanelName); 
-//		 System.out.println(profileImageUrl);
-//		 System.out.println(newVideoUrl); 
+		 System.out.println(chanelName); 
+		 System.out.println(profileImageUrl);
+		 System.out.println(newVideoUrl); 
 		 System.out.println("============================================================");
 		 
 

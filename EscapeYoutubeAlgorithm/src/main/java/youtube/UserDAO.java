@@ -99,9 +99,25 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return -1; // DB 오류
-
 	}
+	public String getUserNameFromDB(String userID) {
 
+		String SQL = "select userName from user_db where userID = ?";
+
+		try {
+
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getString(1);
+			}
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return "-1"; // DB 오류
+	}
 
 }
 
